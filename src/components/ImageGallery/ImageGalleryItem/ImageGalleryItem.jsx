@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Modal from 'components/Modal/Modal';
+import css from './ImageGalleryItem.module.css';
 
 
 export class ImageGalleryItem extends Component {
@@ -20,8 +21,9 @@ export class ImageGalleryItem extends Component {
 
   render() {
     return (
-      <li>
+      <li className={css.imageGalleryItem}>
         <img
+        className={css.imageGalleryItemImage}
         onClick={this.handleToggleModal}
           src={this.props.webformatURL}
           alt={this.props.tags}

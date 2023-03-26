@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import { ImageGalleryList } from 'components/ImageGalleryList/ImageGalleryList';
+import { ImageGalleryList } from 'components/ImageGallery/ImageGalleryList/ImageGalleryList';
 import { Searchbar } from 'components/Searchbar/Searchbar';
 import Button from 'components/Button/Button';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { api } from 'services/api';
+
+import css from './ImageFinder.module.css';
 
 const Status = {
   IDLE: 'idle',
@@ -49,7 +51,7 @@ export class ImageFinder extends Component {
 
   render() {
     return (
-      <div>
+      <div className={css.box}>
         <Searchbar onSubmit={this.handleFormSubmit} />
         {this.state.images && <ImageGalleryList images={this.state.images} />}
         <Button onClick={this.handleLoadMoreClick} />

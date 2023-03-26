@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import css from './Modal.module.css';
 
 export default class Modal extends Component {
   static propTypes = {
@@ -14,8 +15,8 @@ export default class Modal extends Component {
 
   render() {
     return (
-      <div onClick={this.handleCloseModal}>
-        <div>{this.props.children}</div>
+      <div className={css.overlay} onClick={this.handleCloseModal}>
+        <div className={css.modal}>{this.props.children}</div>
       </div>
     );
   }

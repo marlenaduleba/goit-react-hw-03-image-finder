@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { ImageGalleryItem } from 'components/ImageGalleryItem/ImageGalleryItem';
+import { ImageGalleryItem } from 'components/ImageGallery/ImageGalleryItem/ImageGalleryItem';
 import PropTypes from 'prop-types';
+import css from './ImageGalleryList.module.css';
 
 export class ImageGalleryList extends Component {
   static propTypes = {
@@ -15,7 +16,7 @@ export class ImageGalleryList extends Component {
 
   render() {
     return (
-      <ul>
+      <ul className={css.imageGallery}>
        {this.props.images.map(
           ({ webformatURL, largeImageURL, tags }, index) => (
             <ImageGalleryItem
