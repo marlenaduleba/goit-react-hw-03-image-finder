@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Modal from 'components/Modal/Modal';
 
 
 export class ImageGalleryItem extends Component {
@@ -9,13 +10,28 @@ export class ImageGalleryItem extends Component {
     tags: PropTypes.string.isRequired,
   };
 
+  state = {
+    isModalOpen: false,
+  };
+
+  handleToggleModal = () => {
+    this.setState(prevState => ({ isModalOpen: !prevState.isModalOpen }));
+  };
+
   render() {
     return (
       <li>
         <img
+        onClick={this.handleToggleModal}
           src={this.props.webformatURL}
           alt={this.props.tags}
         />
+         {this.state.isModalOpen && (
+          <Modal
+            onCloseModal={this.handleToggleModal}
+            src={this.props.largeImageURL}
+          />
+        )}
       </li>
     );
   }
