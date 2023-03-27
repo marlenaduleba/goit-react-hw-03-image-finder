@@ -45,7 +45,7 @@ export class ImageFinder extends Component {
         .then(({ data }) => {
           if (prevState.search !== search) {
             if (data.hits <= 0) {
-              toast.info(`Sorry, there are no images matching your search query. Please try again.`);
+              toast.error(`Sorry, there are no images matching your search query. Please try again.`);
               this.setState({
                 error: 'not found',
                 status: Status.REJECTED,
