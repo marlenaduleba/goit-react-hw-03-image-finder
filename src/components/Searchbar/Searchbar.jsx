@@ -19,7 +19,14 @@ export class Searchbar extends Component {
   handleFormSubmit = e => {
     e.preventDefault();
     this.props.onSubmit(this.state.search);
+    this.reset();
   };
+
+  reset = () => {
+    this.setState({
+        search: '',
+    });
+};
 
   render() {
     return (
