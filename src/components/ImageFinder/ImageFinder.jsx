@@ -51,6 +51,8 @@ export class ImageFinder extends Component {
                 status: Status.REJECTED,
               });
               return;
+            } else {
+              toast.info(`Hooray! We found "${data.total}" images`);
             }
 
             this.setState({
@@ -81,7 +83,7 @@ export class ImageFinder extends Component {
   render() {
     const { page, totalPage, images, status } = this.state;
 
-    const isShowButton = page <= totalPage ? true : false;
+    const isShowButton = page *12 <= totalPage ? true : false;
 
     return (
       <div className={css.box}>
@@ -108,7 +110,7 @@ export class ImageFinder extends Component {
             />
           </>
         )}
-        <ToastContainer />
+        <ToastContainer autoClose={3000} />
       </div>
     );
   }
