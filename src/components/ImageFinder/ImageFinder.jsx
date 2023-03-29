@@ -105,6 +105,8 @@ export class ImageFinder extends Component {
             />
           </>
         )}
+
+        
         <ToastContainer autoClose={3000} />
       </div>
     );
