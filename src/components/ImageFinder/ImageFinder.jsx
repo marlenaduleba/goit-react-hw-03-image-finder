@@ -98,12 +98,14 @@ export class ImageFinder extends Component {
         )}
 
         {status === 'rejected' && (
-          <>
-            <img
-              src={img}
-              alt="not found images"
-            />
-          </>
+        
+            <div className={css.error}>
+              <img
+                src={img}
+                alt="not found images"
+              />
+            </div>
+          
         )}
 
         
